@@ -41,6 +41,9 @@
       "output": "static",
       "favicon": "./assets/favicon.png"
     },
+    "experiments": {
+      "baseUrl": "/Siteflow"
+    },
     "plugins": [
       "expo-router",
       "expo-sqlite",
