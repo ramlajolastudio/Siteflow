@@ -12,10 +12,16 @@ import {
   StyleSheet,
   RefreshControl,
   Alert,
+  Platform,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Audio } from 'expo-av';
+
+// Lazy-load Audio only on native
+let Audio: any = null;
+if (Platform.OS !== 'web') {
+  Audio = require('expo-av').Audio;
+}
 import SyncStatusBar from '@/components/SyncStatusBar';
 import { getAll, insertRecord } from '@/lib/database';
 import { saveVoiceNote } from '@/lib/storage';
@@ -37,7 +43,7 @@ export default function NotesScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [recordingDuration, setRecordingDuration] = useState(0);
-  const recordingRef = useRef<Audio.Recording | null>(null);
+  const recordingRef = useRef<any>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const loadData = useCallback(async () => {
@@ -56,6 +62,10 @@ export default function NotesScreen() {
 
   // ── Voice Recording ─────────────────────────────────────────────
   async function startRecording() {
+    if (Platform.OS === 'web' || !Audio) {
+      Alert.alert('Not available', 'Voice recording requires the native app.');
+      return;
+    }
     try {
       const permission = await Audio.requestPermissionsAsync();
       if (!permission.granted) {
@@ -69,7 +79,7 @@ export default function NotesScreen() {
       });
 
       const { recording } = await Audio.Recording.createAsync(
-        Audio.RecordingOptionsPresets.HIGH_QUALITY
+        Audio.RecordingOptionsPresets?.HIGH_QUALITY
       );
       recordingRef.current = recording;
       setIsRecording(true);

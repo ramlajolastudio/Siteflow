@@ -5,7 +5,12 @@
  */
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
-import { BlurView } from 'expo-blur';
+
+// BlurView may not work on all web browsers
+let BlurView: any = null;
+if (Platform.OS !== 'web') {
+  BlurView = require('expo-blur').BlurView;
+}
 import { MaterialIcons } from '@expo/vector-icons';
 import { Colors, Components, Shadows } from '@/constants/theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -32,7 +37,7 @@ export default function GlassTabBar({ state, descriptors, navigation }: BottomTa
 
   return (
     <View style={[styles.wrapper, { paddingBottom: Math.max(insets.bottom, 8) }]}>
-      {Platform.OS === 'ios' ? (
+      {Platform.OS === 'ios' && BlurView ? (
         <BlurView intensity={60} tint="light" style={styles.blurFill} />
       ) : (
         <View style={styles.androidFill} />

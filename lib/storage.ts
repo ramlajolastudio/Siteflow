@@ -2,16 +2,23 @@
  * Photo & File Storage — saves files locally on-device.
  * Photos are saved immediately when captured, then queued for cloud sync.
  */
-import * as FileSystem from 'expo-file-system';
+import { Platform } from 'react-native';
 import { insertRecord } from './database';
 
+// Lazy-load expo-file-system only on native
+let FileSystem: any = null;
+if (Platform.OS !== 'web') {
+  FileSystem = require('expo-file-system');
+}
+
 // Base directory for all SiteFlow photos
-const PHOTOS_DIR = `${FileSystem.documentDirectory}siteflow-photos/`;
+const PHOTOS_DIR = Platform.OS !== 'web' ? `${FileSystem?.documentDirectory}siteflow-photos/` : '';
 
 /**
  * Ensure the photos directory exists
  */
 export async function ensurePhotosDir(): Promise<void> {
+  if (Platform.OS === 'web' || !FileSystem) return;
   const dirInfo = await FileSystem.getInfoAsync(PHOTOS_DIR);
   if (!dirInfo.exists) {
     await FileSystem.makeDirectoryAsync(PHOTOS_DIR, { intermediates: true });

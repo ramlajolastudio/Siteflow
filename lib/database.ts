@@ -3,9 +3,14 @@
  * ALL data writes go here first. Cloud sync happens later via sync queue.
  */
 import { Platform } from 'react-native';
-import * as SQLite from 'expo-sqlite';
 
-let db: SQLite.SQLiteDatabase | null = null;
+// Lazy-load expo-sqlite only on native (it crashes on web)
+let SQLite: any = null;
+if (Platform.OS !== 'web') {
+  SQLite = require('expo-sqlite');
+}
+
+let db: any = null;
 
 // In-memory fallback for web (expo-sqlite is native-only)
 let webStore: Record<string, any[]> = {};
@@ -16,7 +21,7 @@ export function isWebPlatform(): boolean {
   return Platform.OS === 'web';
 }
 
-export async function getDatabase(): Promise<SQLite.SQLiteDatabase> {
+export async function getDatabase(): Promise<any> {
   if (isWebPlatform()) {
     // Return a dummy — web uses the in-memory store instead
     if (!webIsInit) {
@@ -41,7 +46,7 @@ export async function getDatabase(): Promise<SQLite.SQLiteDatabase> {
   return db;
 }
 
-async function initSchema(database: SQLite.SQLiteDatabase) {
+async function initSchema(database: any) {
   await database.execAsync(`
     PRAGMA journal_mode = WAL;
     PRAGMA foreign_keys = ON;
