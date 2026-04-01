@@ -10,6 +10,8 @@ import { Colors } from '@/constants/theme';
 export default function Index() {
   useEffect(() => {
     async function checkAuth() {
+      // Small delay to ensure layout is mounted
+      await new Promise((r) => setTimeout(r, 100));
       try {
         if (isWebPlatform()) {
           const store = getWebStore();

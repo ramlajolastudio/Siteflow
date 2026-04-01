@@ -20,22 +20,21 @@ export default function RootLayout() {
   useEffect(() => {
     async function init() {
       try {
-        // 1. Initialize database
+        // 1. Initialize database (no-op on web)
         await getDatabase();
 
-        // 2. Seed demo data (only runs once)
+        // 2. Seed demo data (uses in-memory store on web)
         await seedDemoData();
 
-        // 3. Start network monitoring
+        // 3. Start network monitoring (assumes online on web)
         startNetworkMonitoring();
 
         // 4. Start sync engine
         startSyncEngine();
       } catch (err) {
-        console.error('Init error:', err);
-      } finally {
-        setIsReady(true);
+        console.warn('Init error:', err);
       }
+      setIsReady(true);
     }
 
     init();
