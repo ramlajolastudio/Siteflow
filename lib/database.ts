@@ -2,11 +2,39 @@
  * SiteFlow Local Database — SQLite offline-first storage
  * ALL data writes go here first. Cloud sync happens later via sync queue.
  */
+import { Platform } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 
 let db: SQLite.SQLiteDatabase | null = null;
 
+// In-memory fallback for web (expo-sqlite is native-only)
+let webStore: Record<string, any[]> = {};
+let webSyncQueue: any[] = [];
+let webIsInit = false;
+
+export function isWebPlatform(): boolean {
+  return Platform.OS === 'web';
+}
+
 export async function getDatabase(): Promise<SQLite.SQLiteDatabase> {
+  if (isWebPlatform()) {
+    // Return a dummy — web uses the in-memory store instead
+    if (!webIsInit) {
+      webIsInit = true;
+      webStore = {
+        jobs: [],
+        contacts: [],
+        notes: [],
+        photos: [],
+        moisture_readings: [],
+        equipment: [],
+        tasks: [],
+        sync_queue: [],
+        user_session: [{ id: 1, user_name: 'Juan Rodriguez', user_role: 'Project Manager', company: 'ABC Restoration Services', access_code: 'SITE2026', logged_in: 0 }],
+      };
+    }
+    return null as any;
+  }
   if (db) return db;
   db = await SQLite.openDatabaseAsync('siteflow.db');
   await initSchema(db);
@@ -157,12 +185,19 @@ async function initSchema(database: SQLite.SQLiteDatabase) {
   `);
 }
 
-// ─── Generic helpers ────────────────────────────────────────────────
+// ─── Generic helpers (web-safe) ─────────────────────────────────────
 
 export async function insertRecord(
   table: string,
   record: Record<string, any>
 ): Promise<void> {
+  if (isWebPlatform()) {
+    if (!webStore[table]) webStore[table] = [];
+    const idx = webStore[table].findIndex((r: any) => r.id === record.id);
+    if (idx >= 0) webStore[table][idx] = { ...webStore[table][idx], ...record };
+    else webStore[table].push({ ...record, created_at: new Date().toISOString() });
+    return;
+  }
   const database = await getDatabase();
   const keys = Object.keys(record);
   const placeholders = keys.map(() => '?').join(', ');
@@ -173,7 +208,6 @@ export async function insertRecord(
     values
   );
 
-  // Add to sync queue
   await database.runAsync(
     `INSERT INTO sync_queue (table_name, record_id, action, payload) VALUES (?, ?, ?, ?)`,
     [table, record.id, 'upsert', JSON.stringify(record)]
@@ -185,6 +219,12 @@ export async function updateRecord(
   id: string,
   updates: Record<string, any>
 ): Promise<void> {
+  if (isWebPlatform()) {
+    if (!webStore[table]) return;
+    const idx = webStore[table].findIndex((r: any) => r.id === id);
+    if (idx >= 0) webStore[table][idx] = { ...webStore[table][idx], ...updates };
+    return;
+  }
   const database = await getDatabase();
   const keys = Object.keys(updates);
   const setClause = keys.map((k) => `${k} = ?`).join(', ');
@@ -202,16 +242,30 @@ export async function updateRecord(
 }
 
 export async function getAll<T>(table: string): Promise<T[]> {
+  if (isWebPlatform()) {
+    return (webStore[table] || []) as T[];
+  }
   const database = await getDatabase();
   return (await database.getAllAsync(`SELECT * FROM ${table} ORDER BY created_at DESC`)) as T[];
 }
 
 export async function getById<T>(table: string, id: string): Promise<T | null> {
+  if (isWebPlatform()) {
+    return (webStore[table] || []).find((r: any) => r.id === id) as T | null;
+  }
   const database = await getDatabase();
   return (await database.getFirstAsync(`SELECT * FROM ${table} WHERE id = ?`, [id])) as T | null;
 }
 
 export async function getWhere<T>(table: string, where: string, params: any[] = []): Promise<T[]> {
+  if (isWebPlatform()) {
+    // Simple web filter: supports "job_id = ?" pattern
+    const match = where.match(/^(\w+)\s*=\s*\?$/);
+    if (match && params.length > 0) {
+      return (webStore[table] || []).filter((r: any) => r[match[1]] === params[0]) as T[];
+    }
+    return (webStore[table] || []) as T[];
+  }
   const database = await getDatabase();
   return (await database.getAllAsync(
     `SELECT * FROM ${table} WHERE ${where} ORDER BY created_at DESC`,
@@ -220,6 +274,7 @@ export async function getWhere<T>(table: string, where: string, params: any[] = 
 }
 
 export async function getPendingSyncCount(): Promise<number> {
+  if (isWebPlatform()) return 0;
   const database = await getDatabase();
   const result = await database.getFirstAsync(
     `SELECT COUNT(*) as count FROM sync_queue WHERE status = 'pending'`
@@ -228,6 +283,7 @@ export async function getPendingSyncCount(): Promise<number> {
 }
 
 export async function getPendingSyncItems(): Promise<any[]> {
+  if (isWebPlatform()) return [];
   const database = await getDatabase();
   return await database.getAllAsync(
     `SELECT * FROM sync_queue WHERE status = 'pending' ORDER BY created_at ASC LIMIT 50`
@@ -235,6 +291,7 @@ export async function getPendingSyncItems(): Promise<any[]> {
 }
 
 export async function markSynced(syncId: number): Promise<void> {
+  if (isWebPlatform()) return;
   const database = await getDatabase();
   await database.runAsync(
     `UPDATE sync_queue SET status = 'synced', synced_at = datetime('now') WHERE id = ?`,
@@ -243,9 +300,14 @@ export async function markSynced(syncId: number): Promise<void> {
 }
 
 export async function markSyncFailed(syncId: number): Promise<void> {
+  if (isWebPlatform()) return;
   const database = await getDatabase();
   await database.runAsync(
     `UPDATE sync_queue SET retry_count = retry_count + 1 WHERE id = ?`,
     [syncId]
   );
 }
+
+// ─── Web-only helpers ───────────────────────────────────────────────
+export function getWebStore() { return webStore; }
+export function setWebStore(store: Record<string, any[]>) { webStore = store; }

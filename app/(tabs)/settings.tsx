@@ -15,7 +15,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
-import { getDatabase } from '@/lib/database';
+import { getDatabase, isWebPlatform, getWebStore } from '@/lib/database';
 import { Colors, Shadows } from '@/constants/theme';
 
 export default function SettingsScreen() {
@@ -31,8 +31,13 @@ export default function SettingsScreen() {
         text: 'Sign Out',
         style: 'destructive',
         onPress: async () => {
-          const db = await getDatabase();
-          await db.runAsync('UPDATE user_session SET logged_in = 0 WHERE id = 1');
+          if (isWebPlatform()) {
+            const store = getWebStore();
+            if (store.user_session?.[0]) store.user_session[0].logged_in = 0;
+          } else {
+            const db = await getDatabase();
+            await db.runAsync('UPDATE user_session SET logged_in = 0 WHERE id = 1');
+          }
           router.replace('/login');
         },
       },

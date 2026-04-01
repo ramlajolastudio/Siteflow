@@ -16,7 +16,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { getDatabase } from '@/lib/database';
+import { getDatabase, isWebPlatform, getWebStore } from '@/lib/database';
 import { Colors } from '@/constants/theme';
 
 const VALID_CODE = 'SITE2026';
@@ -28,8 +28,13 @@ export default function LoginScreen() {
 
   async function handleLogin() {
     if (code.trim().toUpperCase() === VALID_CODE) {
-      const db = await getDatabase();
-      await db.runAsync('UPDATE user_session SET logged_in = 1 WHERE id = 1');
+      if (isWebPlatform()) {
+        const store = getWebStore();
+        if (store.user_session?.[0]) store.user_session[0].logged_in = 1;
+      } else {
+        const db = await getDatabase();
+        await db.runAsync('UPDATE user_session SET logged_in = 1 WHERE id = 1');
+      }
       router.replace('/(tabs)');
     } else {
       setError('Invalid access code');

@@ -4,13 +4,22 @@
 import { useEffect } from 'react';
 import { router } from 'expo-router';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
-import { getDatabase } from '@/lib/database';
+import { getDatabase, isWebPlatform, getWebStore } from '@/lib/database';
 import { Colors } from '@/constants/theme';
 
 export default function Index() {
   useEffect(() => {
     async function checkAuth() {
       try {
+        if (isWebPlatform()) {
+          const store = getWebStore();
+          if (store.user_session?.[0]?.logged_in === 1) {
+            router.replace('/(tabs)');
+          } else {
+            router.replace('/login');
+          }
+          return;
+        }
         const db = await getDatabase();
         const session = await db.getFirstAsync(
           'SELECT logged_in FROM user_session WHERE id = 1'
