@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>SiteFlow - Job Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-stacking {
+            background-color: var(--tw-bg-opacity);
+        }
+        .no-border { border: none !important; }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9fe; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- Header Section (Dark Gradient) -->
+<header class="bg-gradient-to-b from-[#111827] to-[#1f2937] pt-12 pb-8 px-6 text-white sticky top-0 z-40">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white cursor-pointer">arrow_back</span>
+<h1 class="text-xl font-bold tracking-tight">4821 E Cactus Rd</h1>
+</div>
+<span class="material-symbols-outlined text-white cursor-pointer">more_horiz</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Mitigation</span>
+<span class="text-slate-400 text-sm">Water Damage - Martinez</span>
+</div>
+</header>
+<main class="px-4 py-6 space-y-4 pb-[120px]">
+<!-- 1. Health Alert -->
+<div class="bg-error-container/40 p-4 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="space-y-1">
+<div class="text-error font-bold text-sm">Action Required</div>
+<p class="text-on-error-container text-sm leading-snug">Lien deadline approaching (3 days) and Supplement #2 is currently 48h overdue.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- 2. Client Info -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider mb-4">Client Information</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-xl font-bold text-slate-900">Martinez Family</h2>
+<p class="text-on-surface-variant text-sm mt-1">4821 E Cactus Rd, Phoenix AZ</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 h-14 bg-surface-container-low rounded-xl flex items-center justify-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">call</span>
+                        Call
+                    </button>
+<button class="flex-1 h-14 bg-surface-container-low rounded-xl flex items-center justify-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">chat</span>
+                        Text
+                    </button>
+<button class="flex-1 h-14 bg-surface-container-low rounded-xl flex items-center justify-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">mail</span>
+                        Email
+                    </button>
+</div>
+</div>
+<!-- 3. Insurance Info -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider mb-4">Insurance Details</div>
+<div class="grid grid-cols-2 gap-y-4">
+<div>
+<div class="text-[10px] uppercase font-bold text-outline">Carrier</div>
+<div class="font-bold text-slate-900">State Farm</div>
+</div>
+<div>
+<div class="text-[10px] uppercase font-bold text-outline">Claim #</div>
+<div class="font-bold text-slate-900">SF-2026-88291</div>
+</div>
+<div class="col-span-2 flex items-center gap-3 pt-2">
+<div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600">person</span>
+</div>
+<div>
+<div class="text-xs font-bold text-slate-900">Tom Bradley</div>
+<div class="text-[11px] text-outline">Adjuster • (602) 555-0199</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Financials -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Financial Overview</div>
+<div class="text-lg font-extrabold text-slate-900 tracking-tight">$28,500.00</div>
+</div>
+<div class="w-full h-3 bg-surface-container-low rounded-full overflow-hidden flex mb-6">
+<div class="h-full bg-primary" style="width: 52%;"></div>
+<div class="h-full bg-amber-400" style="width: 28%;"></div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div>
+<div class="text-[10px] uppercase font-bold text-outline mb-1">Paid</div>
+<div class="text-sm font-bold text-primary">$15,000</div>
+</div>
+<div>
+<div class="text-[10px] uppercase font-bold text-outline mb-1">Approved</div>
+<div class="text-sm font-bold text-amber-600">$8,000</div>
+</div>
+<div>
+<div class="text-[10px] uppercase font-bold text-outline mb-1">Pending</div>
+<div class="text-sm font-bold text-slate-400">$5,500</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- 5. Key Dates Timeline -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider mb-6">Timeline &amp; Compliance</div>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-px before:bg-surface-container">
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900">Job Opened</div>
+<div class="text-xs text-outline">Oct 12, 2023 • 08:45 AM</div>
+</div>
+</div>
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-error text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div class="text-sm font-bold text-slate-900">20-Day Lien Notice</div>
+<span class="bg-error/10 text-error px-2 py-0.5 rounded-full text-[10px] font-bold">3 days left</span>
+</div>
+<div class="text-xs text-outline">Deadline: Nov 01, 2023</div>
+</div>
+</div>
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-400">Reconstruction Start</div>
+<div class="text-xs text-outline">Estimated: Nov 05, 2023</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. Equipment -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Equipment On-Site</div>
+<span class="text-[11px] font-bold text-primary">Live Tracking</span>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant">mode_fan</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900">LGR Dehumidifier</div>
+<div class="text-xs text-outline">$85.00 / day</div>
+</div>
+</div>
+<div class="font-extrabold text-slate-900">x2</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant">air</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900">Axial Air Mover</div>
+<div class="text-xs text-outline">$32.00 / day</div>
+</div>
+</div>
+<div class="font-extrabold text-slate-900">x12</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border-2 border-dashed border-outline-variant text-sm font-bold text-outline hover:bg-slate-50 transition-colors">
+                    + Add Equipment
+                </button>
+</div>
+</div>
+<!-- 7. Photos Grid -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Photos (24)</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-primary text-white text-[10px] font-bold rounded-full">All</button>
+<button class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-[10px] font-bold rounded-full">Before</button>
+<button class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-[10px] font-bold rounded-full">Active</button>
+</div>
+</div>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-2">
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="close-up of water damaged ceiling with brown stains and peeling white paint in a residential home" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4cy-9fJJ4bTJ4Yre9jorv5Tl1Q89yyjZADx9FR9TCyS2amTxhoUQJSFk2x20Cb7wsIwTfFf-aURaqo6aBJcl2hkg1LzwS4338BtgWYWxhAvKYqef5uID3ClqcMLZZm_3PNkEtuNkaAgJp4jW-tqVGVVwzNc1wFoOvJXz7T-ddsZAgymii4E9ZKIcMWUZ4-gUxm9a746GMNqAk4JDYLTeq1rF904th2JwIQ-Mf1_g-CYRw4Gl-HDRa8biSl9cgJLV_3fgBpBgooHQ"/>
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="professional blue industrial dehumidifier operating on a flooded gray tile floor in a modern kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiFc4uXkQuykpr14ydOgvJ3dcURLjTiS7WcAhBN54hhvXq-0bEsk20xbKoqp5JZMqD3nhUBBljuRRD0eBtZXK1F8mqqPxDwbwscGfDDE86mWb3iXdzdZtT0SMcyqKKOq6TeJMsPb5nDteRxQQWw0XSJCKs0f7RWjNBtJd3gS2uLekmPuv6LU6Jb4B8QvFS2nLmCtWvodqLi5ufHIiQZFDjuSFiOwG8mz31W86kTRotuL3MdCv8UgVRdamNbbqHxuWDB6OOaIXmnxs"/>
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="technician in safety gear using a moisture meter on a wooden wall section with visible water damage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo7Uk7iShdzjve2tczQuU3K2_LoTnUIgJ739zGns3jM3MyMntheIM95JbVInkRh2rHxFbBF2GUhjxfcDOwA_Tc7oW0lqltUxXev4AVm5VZHDgFhsk41vQLgDTEMu6JXcxOZ2ArJDkpflhtSDPJiqe2hcvM8uGG49PHxHJLkK_pv3U1Flb2w3pYxr1xqgq01fSs_k39w4cLvsQodTZKd_85tlHpFYxHhUFfslSuVRs5BJOOO-QUV5qCnAPkc0LdokwPCJoYy6S247g"/>
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="interior residential construction site with exposed wood framing and blue air movers on the floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsoX29_PfR-Efs3pXkRa8-8PyafCqyBfaSk6khyiM5SEbHVZPRyY9GTRnVuRAabSaOOqkNQH3NhmmufF48NXy69U8w5Rmhd_IozeC3ZOdP_ETmBnZQsLXX45HM3ZVz0FShf-8T6shq-0Gr9qAQ4_7OHqZrtsODey4FnPsHHD3wWIjfFQr7hqd7u6Rv11ncRhB49EFXEuEGCuPCROClvmSd3-2UO5SldfqNIv1rCIkGTDNr0djDhXgmZhNq7bkt7IRguFWWL9csVTE"/>
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="close up of mold growth on drywall panel inside a dark basement storage area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEyZe0bvmFKDzDYvyDox5zCSHHutJEuR1wINrWadK4rwwRfcUWN_KIDAUVhbLMbBsHtFR8tQo4cgqoMLBqJsR0xamJXbd2LpXJSx-Ta3vqvsEJWw6aeObsgPM1mtMlz26l4zIeKgYcktb3ZcDI7NfpXBYL7KJgWu1op7xAjJvj5xgMhaOXLqkqB1ZPtxAOHQREuq1P6Mg7OU-kkD-_4LRdBkxxImjxp9KGRzse7j72DD9Tuj7wr4x9P3NlqwRpefyV7yyuYoaYlfM"/>
+<div class="aspect-square bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                    +19
+                </div>
+</div>
+</div>
+<!-- 8 & 9. Notes & Tasks -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- 8. Notes -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Latest Notes (6)</div>
+<span class="material-symbols-outlined text-primary cursor-pointer">add_box</span>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-3 rounded-xl">
+<div class="flex justify-between mb-1">
+<span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded text-[9px] font-bold uppercase">Insurance</span>
+<span class="text-[10px] text-outline">2h ago</span>
+</div>
+<p class="text-xs text-slate-700 leading-normal">Adjuster called. Requested moisture logs for Master Bedroom for the last 48 hours.</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl">
+<div class="flex justify-between mb-1">
+<span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-[9px] font-bold uppercase">Internal</span>
+<span class="text-[10px] text-outline">5h ago</span>
+</div>
+<p class="text-xs text-slate-700 leading-normal">Crew noted heavy saturation behind the vanity. May need to pull cabinets tomorrow.</p>
+</div>
+</div>
+</div>
+<!-- 9. Tasks -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider mb-4">Production Tasks</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex-1 h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-3/4"></div>
+</div>
+<span class="text-[11px] font-bold text-slate-900">12/16 Done</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-md border-2 border-primary flex items-center justify-center bg-primary">
+<span class="material-symbols-outlined text-[14px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-sm text-slate-900 font-medium">Demolition - Phase 1</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-md border-2 border-outline-variant"></div>
+<span class="text-sm text-slate-900 font-medium">Daily Moisture Log</span>
+</div>
+<span class="bg-error/10 text-error px-2 py-0.5 rounded-full text-[9px] font-bold uppercase">Due Now</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-md border-2 border-outline-variant"></div>
+<span class="text-sm text-slate-900 font-medium">Equip. Maintenance Check</span>
+</div>
+<span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase">Tomorrow</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 10. Moisture Readings -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div>
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Moisture Content</div>
+<div class="flex items-center gap-1 text-emerald-600 mt-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span class="text-xs font-bold">Trending down</span>
+</div>
+</div>
+<button class="bg-surface-container-low px-4 py-2 rounded-lg text-xs font-bold text-primary">View Full Chart</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="border-b border-surface-container-low">
+<tr>
+<th class="pb-3 font-bold text-outline text-[10px] uppercase">Location</th>
+<th class="pb-3 font-bold text-outline text-[10px] uppercase">Oct 14</th>
+<th class="pb-3 font-bold text-outline text-[10px] uppercase">Oct 15</th>
+<th class="pb-3 font-bold text-outline text-[10px] uppercase">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr>
+<td class="py-3 font-bold text-slate-900">Master Bedroom</td>
+<td class="py-3 text-slate-600">82%</td>
+<td class="py-3 text-emerald-600 font-bold">18%</td>
+<td class="py-3"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span></td>
+</tr>
+<tr>
+<td class="py-3 font-bold text-slate-900">Master Bath</td>
+<td class="py-3 text-slate-600">94%</td>
+<td class="py-3 text-amber-600 font-bold">62%</td>
+<td class="py-3"><span class="w-2 h-2 rounded-full bg-amber-500 inline-block"></span></td>
+</tr>
+<tr>
+<td class="py-3 font-bold text-slate-900">Hallway</td>
+<td class="py-3 text-slate-600">45%</td>
+<td class="py-3 text-emerald-600 font-bold">12%</td>
+<td class="py-3"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Glassmorphism) -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 backdrop-blur-[20px] shadow-[0px_-2px_16px_rgba(0,0,0,0.06)] flex justify-around items-center px-4 pb-6">
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Home</span>
+</div>
+<!-- Active State: Jobs -->
+<div class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Jobs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Contacts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Notes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Settings</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,1815 @@
+<!-- Home Dashboard -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SiteFlow - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#2b418d",
+            "surface-bright": "#f9f9fe",
+            "primary-fixed": "#dce1ff",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "on-tertiary-container": "#ffe1d9",
+            "on-surface": "#1a1c1f",
+            "primary-container": "#0055ff",
+            "on-error-container": "#93000a",
+            "outline": "#737688",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#c13301",
+            "on-secondary-container": "#243c88",
+            "secondary-fixed": "#dce1ff",
+            "on-primary-fixed": "#001551",
+            "inverse-surface": "#2e3034",
+            "surface-dim": "#d9dade",
+            "secondary-container": "#95aafd",
+            "inverse-on-surface": "#f0f0f5",
+            "on-secondary": "#ffffff",
+            "surface": "#f9f9fe",
+            "surface-container": "#ededf2",
+            "on-tertiary-fixed": "#3b0900",
+            "primary-fixed-dim": "#b6c4ff",
+            "on-primary-container": "#e3e6ff",
+            "primary": "#0041c8",
+            "tertiary": "#972500",
+            "surface-tint": "#004dea",
+            "on-background": "#1a1c1f",
+            "on-primary-fixed-variant": "#0039b3",
+            "inverse-primary": "#b6c4ff",
+            "error": "#ba1a1a",
+            "background": "#f9f9fe",
+            "tertiary-fixed": "#ffdbd1",
+            "surface-container-highest": "#e2e2e7",
+            "secondary-fixed-dim": "#b6c4ff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#872100",
+            "on-secondary-fixed": "#001551",
+            "on-error": "#ffffff",
+            "surface-variant": "#e2e2e7",
+            "secondary": "#445aa7",
+            "outline-variant": "#c3c5d9",
+            "surface-container-high": "#e8e8ed",
+            "surface-container-low": "#f3f3f8",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#434656"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    .tonal-stacking { position: relative; z-index: 1; }
+    .no-border { border: none !important; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background antialiased pb-[120px]">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#111827] text-white">
+<div class="flex items-center justify-between px-6 pt-8 pb-6 w-full">
+<div class="flex flex-col">
+<span class="text-[12px] font-bold uppercase tracking-[0.1em] text-slate-400">Good morning</span>
+<h1 class="font-headline font-extrabold text-[26px] tracking-tight leading-tight text-white">SiteFlow</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-container to-primary flex items-center justify-center font-bold text-white shadow-lg">
+          JR
+        </div>
+</div>
+</div>
+</header>
+<main class="px-6 py-6 space-y-8">
+<!-- Alerts Banner -->
+<section>
+<div class="bg-error/5 border-l-[3px] border-error rounded-r-xl p-4 flex gap-3 items-start">
+<span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="text-sm font-semibold text-on-error-container leading-snug">
+          2 lien deadlines within 5 days · 3 supplements overdue 30+ days
+        </p>
+</div>
+</section>
+<!-- Key Metrics Row (Horizontal Scroll) -->
+<section>
+<div class="flex overflow-x-auto pb-4 gap-4 scrollbar-hide -mx-6 px-6">
+<div class="flex-none w-40 bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<p class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Active Jobs</p>
+<p class="text-[28px] font-extrabold text-primary leading-none">12</p>
+</div>
+<div class="flex-none w-52 bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<p class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Pending Supplements</p>
+<p class="text-[28px] font-extrabold text-tertiary-container leading-none">$48,500</p>
+</div>
+<div class="flex-none w-40 bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<p class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Equipment Out</p>
+<p class="text-[28px] font-extrabold text-on-surface leading-none">47</p>
+</div>
+<div class="flex-none w-40 bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<p class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Overdue Tasks</p>
+<p class="text-[28px] font-extrabold text-error leading-none">5</p>
+</div>
+</div>
+</section>
+<!-- Quick Actions (2x2 Grid) -->
+<section class="space-y-4">
+<h2 class="text-[11px] font-bold uppercase tracking-[0.1em] text-on-surface-variant">Quick Actions</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- New Job -->
+<button class="flex flex-col items-center justify-center p-6 bg-primary-container text-white rounded-[24px] gap-3 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add_business</span>
+<span class="text-sm font-bold">New Job</span>
+</button>
+<!-- Quick Photo -->
+<button class="flex flex-col items-center justify-center p-6 bg-white text-on-surface border border-outline-variant/20 rounded-[24px] gap-3 active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[32px] text-primary">photo_camera</span>
+<span class="text-sm font-bold">Quick Photo</span>
+</button>
+<!-- Voice Note -->
+<button class="flex flex-col items-center justify-center p-6 bg-white text-on-surface border border-outline-variant/20 rounded-[24px] gap-3 active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[32px] text-tertiary-container">mic</span>
+<span class="text-sm font-bold">Voice Note</span>
+</button>
+<!-- Log Reading -->
+<button class="flex flex-col items-center justify-center p-6 bg-white text-on-surface border border-outline-variant/20 rounded-[24px] gap-3 active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[32px] text-[#008080]">straighten</span>
+<span class="text-sm font-bold">Log Reading</span>
+</button>
+</div>
+</section>
+<!-- My Tasks Section -->
+<section class="space-y-4">
+<h2 class="font-headline font-extrabold text-[20px] text-on-surface tracking-tight">My Tasks</h2>
+<div class="space-y-4">
+<!-- Juan Rodriguez PM Card -->
+<div class="bg-surface-container-lowest p-5 rounded-[24px] shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-[11px] font-bold text-blue-700">JR</div>
+<span class="font-bold text-sm">Juan Rodriguez (PM)</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-error shrink-0"></div>
+<div>
+<p class="text-sm font-semibold">Sign Contract - Miller Residence</p>
+<p class="text-[12px] text-on-surface-variant">Residential Roof Repair</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-error/10 text-error text-[10px] font-bold uppercase rounded-full">Overdue</span>
+</div>
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-tertiary-container shrink-0"></div>
+<div>
+<p class="text-sm font-semibold">Equipment Return Check</p>
+<p class="text-[12px] text-on-surface-variant">Main Warehouse</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold uppercase rounded-full">Due today</span>
+</div>
+</div>
+</div>
+<!-- Matt Kowalski PM Card -->
+<div class="bg-surface-container-lowest p-5 rounded-[24px] shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-[11px] font-bold text-amber-700">MK</div>
+<span class="font-bold text-sm">Matt Kowalski (PM)</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-[#10b981] shrink-0"></div>
+<div>
+<p class="text-sm font-semibold">Permit Approval Follow-up</p>
+<p class="text-[12px] text-on-surface-variant">Oak Street Plaza</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold uppercase rounded-full">Tomorrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 backdrop-blur-[20px] flex justify-around items-center px-4 pb-safe shadow-[0px_-2px_16px_rgba(0,0,0,0.06)]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Home</span>
+</a>
+<!-- Jobs -->
+<a class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Jobs</span>
+</a>
+<!-- Contacts -->
+<a class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Contacts</span>
+</a>
+<!-- Notes -->
+<a class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Notes</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Settings</span>
+</a>
+</nav>
+</body></html>
+
+<!-- Login Screen -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SiteFlow - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .login-gradient {
+            background: radial-gradient(circle at top right, #101830, #080c18);
+        }
+        .button-glow {
+            box-shadow: 0 0 20px rgba(0, 85, 255, 0.4);
+        }
+        .logo-glow {
+            box-shadow: 0 0 30px rgba(0, 85, 255, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="login-gradient min-h-screen flex flex-col font-body text-white selection:bg-primary-container selection:text-white overflow-hidden">
+<!-- Content Canvas -->
+<main class="flex-1 flex items-center justify-center px-6">
+<div class="w-full max-w-sm flex flex-col items-center">
+<!-- Logo Section -->
+<div class="mb-10 relative">
+<div class="w-[72px] h-[72px] bg-gradient-to-br from-[#0055ff] to-[#0041c8] rounded-full flex items-center justify-center logo-glow relative z-10">
+<span class="material-symbols-outlined text-white text-[40px]" style="font-variation-settings: 'FILL' 1;">near_me</span>
+</div>
+<!-- Decorative wave/pin element background blur -->
+<div class="absolute inset-0 bg-primary-container opacity-20 blur-2xl rounded-full scale-150"></div>
+</div>
+<!-- Header Section -->
+<div class="text-center mb-12">
+<h1 class="text-[32px] font-extrabold tracking-tight leading-tight mb-2">SiteFlow</h1>
+<p class="text-[15px] text-white/50 font-medium">Your job site command center</p>
+</div>
+<!-- Form Section -->
+<div class="w-full space-y-4">
+<div class="relative group">
+<input class="w-full h-[52px] bg-white/[0.08] border-0 rounded-[14px] px-5 text-white placeholder:text-white/30 focus:ring-2 focus:ring-primary-container/40 transition-all duration-300" placeholder="Access code" type="text"/>
+<!-- Error State (Hidden by default in CSS, managed by logic) -->
+<div class="hidden absolute -bottom-6 left-1" id="error-message">
+<span class="text-error text-xs font-bold tracking-tight">Invalid access code</span>
+</div>
+</div>
+<button class="w-full h-[52px] bg-gradient-to-b from-[#0055ff] to-[#0040cc] rounded-[14px] flex items-center justify-center gap-2 font-bold text-[16px] button-glow hover:opacity-90 active:scale-[0.98] transition-all">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Subtle secondary action -->
+<div class="mt-8">
+<button class="text-white/40 hover:text-white/60 text-sm font-semibold transition-colors">
+                    Request site access
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="py-8 flex justify-center w-full">
+<p class="text-[12px] font-bold text-white/20 uppercase tracking-[0.05em]">
+            SiteFlow — Built for the field
+        </p>
+</footer>
+<!-- Image Logic for decorative backgrounds if needed -->
+<div class="fixed inset-0 -z-10 opacity-30 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-primary/20 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary-container/10 blur-[100px]"></div>
+</div>
+</body></html>
+
+<!-- Jobs Pipeline -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>SiteFlow - Jobs Pipeline</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- Top AppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f9fe]/70 dark:bg-slate-950/70 backdrop-blur-xl">
+<div class="flex items-center justify-between px-6 pt-8 pb-4 w-full">
+<h1 class="font-['Inter'] font-extrabold text-[2rem] tracking-tight leading-tight text-slate-900 dark:text-slate-50">
+                SiteFlow
+            </h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0041c8] text-[28px] cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="px-6 pb-32">
+<!-- Header Section -->
+<div class="flex justify-between items-end mt-4 mb-6">
+<div>
+<h2 class="text-[28px] font-extrabold tracking-tight text-on-surface leading-none">Jobs</h2>
+<p class="text-on-surface-variant font-medium mt-1">12 active projects</p>
+</div>
+<button class="w-12 h-12 flex items-center justify-center bg-surface-container-low rounded-xl text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<!-- Status Filter Pills -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-6">
+<button class="whitespace-nowrap px-5 py-2.5 rounded-full bg-primary-container text-white text-[11px] font-bold uppercase tracking-[0.05em]">All (12)</button>
+<button class="whitespace-nowrap px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant text-[11px] font-bold uppercase tracking-[0.05em] hover:bg-surface-container-high transition-colors">Lead (2)</button>
+<button class="whitespace-nowrap px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant text-[11px] font-bold uppercase tracking-[0.05em] hover:bg-surface-container-high transition-colors">Mitigation (3)</button>
+<button class="whitespace-nowrap px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant text-[11px] font-bold uppercase tracking-[0.05em] hover:bg-surface-container-high transition-colors">Drying (4)</button>
+<button class="whitespace-nowrap px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant text-[11px] font-bold uppercase tracking-[0.05em] hover:bg-surface-container-high transition-colors">Rebuild (2)</button>
+<button class="whitespace-nowrap px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant text-[11px] font-bold uppercase tracking-[0.05em] hover:bg-surface-container-high transition-colors">Complete (1)</button>
+</div>
+<!-- Search Bar -->
+<div class="relative mb-8">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full h-12 bg-surface-container-low border-none rounded-xl pl-12 pr-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 bg-surface-container-low transition-all" placeholder="Search by address, client, or claim..." type="text"/>
+</div>
+<!-- Jobs Grid/List -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Job Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_2px_16px_rgba(0,0,0,0.06)] ring-2 ring-error/20 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1.5 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<span class="text-[11px] font-bold uppercase tracking-[0.05em] text-error">High Risk</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface">4821 E Cactus Rd</h3>
+<p class="text-sm text-on-surface-variant font-medium">Mitigation Status • Day 17</p>
+</div>
+<span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-[0.05em]">Water Damage</span>
+</div>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-2xl font-extrabold tracking-tight text-on-surface">$28,500</span>
+<span class="text-xs font-bold text-outline">ESTIMATED</span>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-lg" data-icon="inventory_2">inventory_2</span>
+<span class="text-xs font-bold text-on-surface-variant">6 Equip. On-site</span>
+</div>
+<button class="text-primary font-bold text-xs uppercase tracking-widest">Details</button>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_2px_16px_rgba(0,0,0,0.06)] ring-2 ring-error/20 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1.5 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="text-[11px] font-bold uppercase tracking-[0.05em] text-error">Delayed</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface">1190 W Camelback Rd</h3>
+<p class="text-sm text-on-surface-variant font-medium">Reconstruction • Day 42</p>
+</div>
+<span class="bg-tertiary-container/10 text-tertiary-container px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-[0.05em]">Fire Restoration</span>
+</div>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-2xl font-extrabold tracking-tight text-on-surface">$67,000</span>
+<span class="text-xs font-bold text-outline">ESTIMATED</span>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-lg" data-icon="engineering">engineering</span>
+<span class="text-xs font-bold text-on-surface-variant">8 Equip. On-site</span>
+</div>
+<button class="text-primary font-bold text-xs uppercase tracking-widest">Details</button>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_2px_16px_rgba(0,0,0,0.06)] ring-2 ring-amber-500/20 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1.5 h-full bg-amber-500"></div>
+<div class="flex justify-between items-start mb-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<span class="text-[11px] font-bold uppercase tracking-[0.05em] text-amber-600">Pending Review</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface">7632 N 15th Ave</h3>
+<p class="text-sm text-on-surface-variant font-medium">Mitigation • Day 8</p>
+</div>
+<span class="bg-green-600/10 text-green-600 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-[0.05em]">Mold Remediation</span>
+</div>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-2xl font-extrabold tracking-tight text-on-surface">$18,200</span>
+<span class="text-xs font-bold text-outline">ESTIMATED</span>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-lg" data-icon="biotech">biotech</span>
+<span class="text-xs font-bold text-on-surface-variant">3 Equip. On-site</span>
+</div>
+<button class="text-primary font-bold text-xs uppercase tracking-widest">Details</button>
+</div>
+</div>
+<!-- Job Card 4 (Additional) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_2px_16px_rgba(0,0,0,0.06)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1.5 h-full bg-green-500"></div>
+<div class="flex justify-between items-start mb-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+<span class="text-[11px] font-bold uppercase tracking-[0.05em] text-green-600">On Schedule</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface">2201 S Priest Dr</h3>
+<p class="text-sm text-on-surface-variant font-medium">Drying • Day 3</p>
+</div>
+<span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-[0.05em]">Water Damage</span>
+</div>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-2xl font-extrabold tracking-tight text-on-surface">$12,400</span>
+<span class="text-xs font-bold text-outline">ESTIMATED</span>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-lg" data-icon="cyclone">cyclone</span>
+<span class="text-xs font-bold text-on-surface-variant">14 Equip. On-site</span>
+</div>
+<button class="text-primary font-bold text-xs uppercase tracking-widest">Details</button>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-32 right-6 w-[60px] h-[60px] bg-gradient-to-b from-primary-container to-primary text-white rounded-full shadow-lg flex items-center justify-center z-40 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 dark:bg-slate-900/70 glass-nav shadow-[0px_-2px_16px_rgba(0,0,0,0.06)]">
+<div class="flex justify-around items-center px-4 pb-safe h-full w-full">
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="construction">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Jobs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="contacts">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Contacts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="description">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Notes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Settings</span>
+</div>
+</div>
+</nav>
+</body></html>
+
+<!-- Job Detail - Martinez -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>SiteFlow - Job Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-stacking {
+            background-color: var(--tw-bg-opacity);
+        }
+        .no-border { border: none !important; }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9fe; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- Header Section (Dark Gradient) -->
+<header class="bg-gradient-to-b from-[#111827] to-[#1f2937] pt-12 pb-8 px-6 text-white sticky top-0 z-40">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white cursor-pointer">arrow_back</span>
+<h1 class="text-xl font-bold tracking-tight">4821 E Cactus Rd</h1>
+</div>
+<span class="material-symbols-outlined text-white cursor-pointer">more_horiz</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Mitigation</span>
+<span class="text-slate-400 text-sm">Water Damage - Martinez</span>
+</div>
+</header>
+<main class="px-4 py-6 space-y-4 pb-[120px]">
+<!-- 1. Health Alert -->
+<div class="bg-error-container/40 p-4 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="space-y-1">
+<div class="text-error font-bold text-sm">Action Required</div>
+<p class="text-on-error-container text-sm leading-snug">Lien deadline approaching (3 days) and Supplement #2 is currently 48h overdue.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- 2. Client Info -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider mb-4">Client Information</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-xl font-bold text-slate-900">Martinez Family</h2>
+<p class="text-on-surface-variant text-sm mt-1">4821 E Cactus Rd, Phoenix AZ</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 h-14 bg-surface-container-low rounded-xl flex items-center justify-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">call</span>
+                        Call
+                    </button>
+<button class="flex-1 h-14 bg-surface-container-low rounded-xl flex items-center justify-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">chat</span>
+                        Text
+                    </button>
+<button class="flex-1 h-14 bg-surface-container-low rounded-xl flex items-center justify-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">mail</span>
+                        Email
+                    </button>
+</div>
+</div>
+<!-- 3. Insurance Info -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider mb-4">Insurance Details</div>
+<div class="grid grid-cols-2 gap-y-4">
+<div>
+<div class="text-[10px] uppercase font-bold text-outline">Carrier</div>
+<div class="font-bold text-slate-900">State Farm</div>
+</div>
+<div>
+<div class="text-[10px] uppercase font-bold text-outline">Claim #</div>
+<div class="font-bold text-slate-900">SF-2026-88291</div>
+</div>
+<div class="col-span-2 flex items-center gap-3 pt-2">
+<div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600">person</span>
+</div>
+<div>
+<div class="text-xs font-bold text-slate-900">Tom Bradley</div>
+<div class="text-[11px] text-outline">Adjuster • (602) 555-0199</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Financials -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Financial Overview</div>
+<div class="text-lg font-extrabold text-slate-900 tracking-tight">$28,500.00</div>
+</div>
+<div class="w-full h-3 bg-surface-container-low rounded-full overflow-hidden flex mb-6">
+<div class="h-full bg-primary" style="width: 52%;"></div>
+<div class="h-full bg-amber-400" style="width: 28%;"></div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div>
+<div class="text-[10px] uppercase font-bold text-outline mb-1">Paid</div>
+<div class="text-sm font-bold text-primary">$15,000</div>
+</div>
+<div>
+<div class="text-[10px] uppercase font-bold text-outline mb-1">Approved</div>
+<div class="text-sm font-bold text-amber-600">$8,000</div>
+</div>
+<div>
+<div class="text-[10px] uppercase font-bold text-outline mb-1">Pending</div>
+<div class="text-sm font-bold text-slate-400">$5,500</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- 5. Key Dates Timeline -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider mb-6">Timeline &amp; Compliance</div>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-px before:bg-surface-container">
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900">Job Opened</div>
+<div class="text-xs text-outline">Oct 12, 2023 • 08:45 AM</div>
+</div>
+</div>
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-error text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div class="text-sm font-bold text-slate-900">20-Day Lien Notice</div>
+<span class="bg-error/10 text-error px-2 py-0.5 rounded-full text-[10px] font-bold">3 days left</span>
+</div>
+<div class="text-xs text-outline">Deadline: Nov 01, 2023</div>
+</div>
+</div>
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-400">Reconstruction Start</div>
+<div class="text-xs text-outline">Estimated: Nov 05, 2023</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. Equipment -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Equipment On-Site</div>
+<span class="text-[11px] font-bold text-primary">Live Tracking</span>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant">mode_fan</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900">LGR Dehumidifier</div>
+<div class="text-xs text-outline">$85.00 / day</div>
+</div>
+</div>
+<div class="font-extrabold text-slate-900">x2</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant">air</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900">Axial Air Mover</div>
+<div class="text-xs text-outline">$32.00 / day</div>
+</div>
+</div>
+<div class="font-extrabold text-slate-900">x12</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border-2 border-dashed border-outline-variant text-sm font-bold text-outline hover:bg-slate-50 transition-colors">
+                    + Add Equipment
+                </button>
+</div>
+</div>
+<!-- 7. Photos Grid -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Photos (24)</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-primary text-white text-[10px] font-bold rounded-full">All</button>
+<button class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-[10px] font-bold rounded-full">Before</button>
+<button class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-[10px] font-bold rounded-full">Active</button>
+</div>
+</div>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-2">
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="close-up of water damaged ceiling with brown stains and peeling white paint in a residential home" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4cy-9fJJ4bTJ4Yre9jorv5Tl1Q89yyjZADx9FR9TCyS2amTxhoUQJSFk2x20Cb7wsIwTfFf-aURaqo6aBJcl2hkg1LzwS4338BtgWYWxhAvKYqef5uID3ClqcMLZZm_3PNkEtuNkaAgJp4jW-tqVGVVwzNc1wFoOvJXz7T-ddsZAgymii4E9ZKIcMWUZ4-gUxm9a746GMNqAk4JDYLTeq1rF904th2JwIQ-Mf1_g-CYRw4Gl-HDRa8biSl9cgJLV_3fgBpBgooHQ"/>
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="professional blue industrial dehumidifier operating on a flooded gray tile floor in a modern kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiFc4uXkQuykpr14ydOgvJ3dcURLjTiS7WcAhBN54hhvXq-0bEsk20xbKoqp5JZMqD3nhUBBljuRRD0eBtZXK1F8mqqPxDwbwscGfDDE86mWb3iXdzdZtT0SMcyqKKOq6TeJMsPb5nDteRxQQWw0XSJCKs0f7RWjNBtJd3gS2uLekmPuv6LU6Jb4B8QvFS2nLmCtWvodqLi5ufHIiQZFDjuSFiOwG8mz31W86kTRotuL3MdCv8UgVRdamNbbqHxuWDB6OOaIXmnxs"/>
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="technician in safety gear using a moisture meter on a wooden wall section with visible water damage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo7Uk7iShdzjve2tczQuU3K2_LoTnUIgJ739zGns3jM3MyMntheIM95JbVInkRh2rHxFbBF2GUhjxfcDOwA_Tc7oW0lqltUxXev4AVm5VZHDgFhsk41vQLgDTEMu6JXcxOZ2ArJDkpflhtSDPJiqe2hcvM8uGG49PHxHJLkK_pv3U1Flb2w3pYxr1xqgq01fSs_k39w4cLvsQodTZKd_85tlHpFYxHhUFfslSuVRs5BJOOO-QUV5qCnAPkc0LdokwPCJoYy6S247g"/>
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="interior residential construction site with exposed wood framing and blue air movers on the floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsoX29_PfR-Efs3pXkRa8-8PyafCqyBfaSk6khyiM5SEbHVZPRyY9GTRnVuRAabSaOOqkNQH3NhmmufF48NXy69U8w5Rmhd_IozeC3ZOdP_ETmBnZQsLXX45HM3ZVz0FShf-8T6shq-0Gr9qAQ4_7OHqZrtsODey4FnPsHHD3wWIjfFQr7hqd7u6Rv11ncRhB49EFXEuEGCuPCROClvmSd3-2UO5SldfqNIv1rCIkGTDNr0djDhXgmZhNq7bkt7IRguFWWL9csVTE"/>
+<img class="aspect-square object-cover rounded-lg w-full" data-alt="close up of mold growth on drywall panel inside a dark basement storage area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEyZe0bvmFKDzDYvyDox5zCSHHutJEuR1wINrWadK4rwwRfcUWN_KIDAUVhbLMbBsHtFR8tQo4cgqoMLBqJsR0xamJXbd2LpXJSx-Ta3vqvsEJWw6aeObsgPM1mtMlz26l4zIeKgYcktb3ZcDI7NfpXBYL7KJgWu1op7xAjJvj5xgMhaOXLqkqB1ZPtxAOHQREuq1P6Mg7OU-kkD-_4LRdBkxxImjxp9KGRzse7j72DD9Tuj7wr4x9P3NlqwRpefyV7yyuYoaYlfM"/>
+<div class="aspect-square bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                    +19
+                </div>
+</div>
+</div>
+<!-- 8 & 9. Notes & Tasks -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- 8. Notes -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Latest Notes (6)</div>
+<span class="material-symbols-outlined text-primary cursor-pointer">add_box</span>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-3 rounded-xl">
+<div class="flex justify-between mb-1">
+<span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded text-[9px] font-bold uppercase">Insurance</span>
+<span class="text-[10px] text-outline">2h ago</span>
+</div>
+<p class="text-xs text-slate-700 leading-normal">Adjuster called. Requested moisture logs for Master Bedroom for the last 48 hours.</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl">
+<div class="flex justify-between mb-1">
+<span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-[9px] font-bold uppercase">Internal</span>
+<span class="text-[10px] text-outline">5h ago</span>
+</div>
+<p class="text-xs text-slate-700 leading-normal">Crew noted heavy saturation behind the vanity. May need to pull cabinets tomorrow.</p>
+</div>
+</div>
+</div>
+<!-- 9. Tasks -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider mb-4">Production Tasks</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex-1 h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-3/4"></div>
+</div>
+<span class="text-[11px] font-bold text-slate-900">12/16 Done</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-md border-2 border-primary flex items-center justify-center bg-primary">
+<span class="material-symbols-outlined text-[14px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-sm text-slate-900 font-medium">Demolition - Phase 1</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-md border-2 border-outline-variant"></div>
+<span class="text-sm text-slate-900 font-medium">Daily Moisture Log</span>
+</div>
+<span class="bg-error/10 text-error px-2 py-0.5 rounded-full text-[9px] font-bold uppercase">Due Now</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-md border-2 border-outline-variant"></div>
+<span class="text-sm text-slate-900 font-medium">Equip. Maintenance Check</span>
+</div>
+<span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase">Tomorrow</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 10. Moisture Readings -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div>
+<div class="text-[11px] font-bold uppercase text-on-surface-variant tracking-wider">Moisture Content</div>
+<div class="flex items-center gap-1 text-emerald-600 mt-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span class="text-xs font-bold">Trending down</span>
+</div>
+</div>
+<button class="bg-surface-container-low px-4 py-2 rounded-lg text-xs font-bold text-primary">View Full Chart</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="border-b border-surface-container-low">
+<tr>
+<th class="pb-3 font-bold text-outline text-[10px] uppercase">Location</th>
+<th class="pb-3 font-bold text-outline text-[10px] uppercase">Oct 14</th>
+<th class="pb-3 font-bold text-outline text-[10px] uppercase">Oct 15</th>
+<th class="pb-3 font-bold text-outline text-[10px] uppercase">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr>
+<td class="py-3 font-bold text-slate-900">Master Bedroom</td>
+<td class="py-3 text-slate-600">82%</td>
+<td class="py-3 text-emerald-600 font-bold">18%</td>
+<td class="py-3"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span></td>
+</tr>
+<tr>
+<td class="py-3 font-bold text-slate-900">Master Bath</td>
+<td class="py-3 text-slate-600">94%</td>
+<td class="py-3 text-amber-600 font-bold">62%</td>
+<td class="py-3"><span class="w-2 h-2 rounded-full bg-amber-500 inline-block"></span></td>
+</tr>
+<tr>
+<td class="py-3 font-bold text-slate-900">Hallway</td>
+<td class="py-3 text-slate-600">45%</td>
+<td class="py-3 text-emerald-600 font-bold">12%</td>
+<td class="py-3"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Glassmorphism) -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 backdrop-blur-[20px] shadow-[0px_-2px_16px_rgba(0,0,0,0.06)] flex justify-around items-center px-4 pb-6">
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Home</span>
+</div>
+<!-- Active State: Jobs -->
+<div class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Jobs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Contacts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Notes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Settings</span>
+</div>
+</nav>
+</body></html>
+
+<!-- Contacts Network -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- Top Navigation Shell -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f9fe]/70 dark:bg-slate-950/70 backdrop-blur-xl flex items-center justify-between px-6 pt-8 pb-4">
+<div class="flex items-center gap-2">
+<span class="font-['Inter'] font-extrabold text-[2rem] tracking-tight leading-tight text-slate-900 dark:text-slate-50">SiteFlow</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity" data-icon="search">search</button>
+<span class="material-symbols-outlined text-[#0041c8] dark:text-[#0055ff]" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="px-6 pb-[120px]">
+<!-- Page Header -->
+<section class="mt-6 flex items-end justify-between">
+<div>
+<h1 class="text-[28px] font-extrabold tracking-tight leading-none text-on-surface">Contacts</h1>
+<p class="text-on-surface-variant mt-1 font-medium">Your referral network</p>
+</div>
+<button class="bg-surface-container-low p-3 rounded-xl text-on-surface hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined align-middle" data-icon="filter_list">filter_list</span>
+</button>
+</section>
+<!-- Search Bar -->
+<section class="mt-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full h-[48px] bg-surface-container-low border-none rounded-xl pl-12 pr-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline outline-none" placeholder="Search contacts..." type="text"/>
+</div>
+</section>
+<!-- Filter Tabs -->
+<section class="mt-6 overflow-x-auto hide-scrollbar -mx-6 px-6">
+<div class="flex gap-2 min-w-max">
+<button class="px-5 py-2.5 rounded-full bg-primary text-on-primary font-bold text-[13px] tracking-wide">All (12)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Agents (5)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Adjusters (3)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Clients (2)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Property Mgrs (1)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Plumbers (1)</button>
+</div>
+</section>
+<!-- Contact Cards List -->
+<div class="mt-8 space-y-4">
+<!-- Contact 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] group hover:shadow-lg transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl">SM</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Sarah Mitchell</h3>
+<p class="text-on-surface-variant text-sm font-medium">State Farm • Agent</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary" data-icon="schedule">schedule</span>
+<span class="text-[12px] font-bold text-tertiary">3 days ago</span>
+</div>
+</div>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-wider rounded-full">Primary</span>
+</div>
+<div class="mt-6 flex justify-between items-center bg-surface-container-low/50 p-4 rounded-xl">
+<div class="text-center flex-1 border-r border-outline-variant/30">
+<p class="text-[11px] font-bold uppercase tracking-widest text-outline">Referrals</p>
+<p class="text-xl font-extrabold text-on-surface">12</p>
+</div>
+<div class="text-center flex-1">
+<p class="text-[11px] font-bold uppercase tracking-widest text-outline">Revenue</p>
+<p class="text-xl font-extrabold text-on-surface">$156K</p>
+</div>
+</div>
+</div>
+<!-- Contact 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
+<div class="flex gap-4">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold text-xl">DP</div>
+<div class="flex-1">
+<div class="flex justify-between items-start w-full">
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">David Park</h3>
+<p class="text-on-surface-variant text-sm font-medium">Allstate • Agent</p>
+</div>
+<div class="text-right">
+<p class="text-xl font-extrabold text-on-surface">8</p>
+<p class="text-[10px] font-bold uppercase tracking-tighter text-outline">Referrals</p>
+</div>
+</div>
+<div class="mt-3 h-1.5 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%] rounded-full"></div>
+</div>
+<p class="text-right mt-1 text-[13px] font-bold text-primary">$98K Total</p>
+</div>
+</div>
+</div>
+<!-- Contact 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow border-l-4 border-primary">
+<div class="flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-xl">MG</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Maria Gonzalez</h3>
+<p class="text-on-surface-variant text-sm font-medium">USAA • Agent</p>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-container p-3 rounded-xl">
+<p class="text-[11px] font-bold uppercase tracking-tight text-center">Top Earner</p>
+<p class="text-lg font-black leading-tight">$210K</p>
+</div>
+</div>
+</div>
+<!-- Contact 4 (Warning) -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white font-bold">JO</div>
+<h3 class="font-bold text-on-surface">James O'Brien</h3>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-error-container text-error rounded-full">
+<span class="material-symbols-outlined text-base" data-icon="warning">warning</span>
+<span class="text-[11px] font-bold uppercase tracking-wider">Stale</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm text-on-surface-variant font-medium">
+<span>Liberty Mutual • Agent</span>
+<span class="font-bold text-on-surface">5 referrals</span>
+</div>
+</div>
+<!-- Contact 5 -->
+<div class="bg-surface-container-low/40 p-5 rounded-xl border border-outline-variant/10">
+<div class="flex gap-4">
+<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center text-white font-bold text-xl">TB</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Tom Bradley</h3>
+<p class="text-on-surface-variant text-sm font-medium">State Farm • Adjuster</p>
+<div class="mt-2 inline-flex items-center gap-2 bg-surface-container-highest px-3 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="work">work</span>
+<span class="text-[12px] font-bold">6 jobs handled</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact 6 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl">KT</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Kevin Tran</h3>
+<p class="text-on-surface-variant text-sm font-medium">Property Mgr</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xl font-extrabold text-on-surface">$89K</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline">7 Referrals</p>
+</div>
+</div>
+</div>
+<!-- Contact 7 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] border-r-4 border-emerald-500">
+<div class="flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-green-600 flex items-center justify-center text-white font-bold text-xl">MH</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Mike Hernandez</h3>
+<p class="text-on-surface-variant text-sm font-medium">Plumber</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xl font-extrabold text-on-surface">$112K</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline">9 Referrals</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-[20px] shadow-[0px_-2px_16px_rgba(0,0,0,0.06)] flex justify-around items-center px-4 pb-safe">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Home</span>
+</div>
+<!-- Jobs -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="construction">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Jobs</span>
+</div>
+<!-- Contacts (Active) -->
+<div class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="contacts" style="font-variation-settings: 'FILL' 1;">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Contacts</span>
+</div>
+<!-- Notes -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Notes</span>
+</div>
+<!-- Settings -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Settings</span>
+</div>
+</nav>
+</body></html>
+
+<!-- Voice-First Notes -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>SiteFlow - Notes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#2b418d",
+            "surface-bright": "#f9f9fe",
+            "primary-fixed": "#dce1ff",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "on-tertiary-container": "#ffe1d9",
+            "on-surface": "#1a1c1f",
+            "primary-container": "#0055ff",
+            "on-error-container": "#93000a",
+            "outline": "#737688",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#c13301",
+            "on-secondary-container": "#243c88",
+            "secondary-fixed": "#dce1ff",
+            "on-primary-fixed": "#001551",
+            "inverse-surface": "#2e3034",
+            "surface-dim": "#d9dade",
+            "secondary-container": "#95aafd",
+            "inverse-on-surface": "#f0f0f5",
+            "on-secondary": "#ffffff",
+            "surface": "#f9f9fe",
+            "surface-container": "#ededf2",
+            "on-tertiary-fixed": "#3b0900",
+            "primary-fixed-dim": "#b6c4ff",
+            "on-primary-container": "#e3e6ff",
+            "primary": "#0041c8",
+            "tertiary": "#972500",
+            "surface-tint": "#004dea",
+            "on-background": "#1a1c1f",
+            "on-primary-fixed-variant": "#0039b3",
+            "inverse-primary": "#b6c4ff",
+            "error": "#ba1a1a",
+            "background": "#f9f9fe",
+            "tertiary-fixed": "#ffdbd1",
+            "surface-container-highest": "#e2e2e7",
+            "secondary-fixed-dim": "#b6c4ff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#872100",
+            "on-secondary-fixed": "#001551",
+            "on-error": "#ffffff",
+            "surface-variant": "#e2e2e7",
+            "secondary": "#445aa7",
+            "outline-variant": "#c3c5d9",
+            "surface-container-high": "#e8e8ed",
+            "surface-container-low": "#f3f3f8",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#434656"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    .tonal-stacking { background-attachment: fixed; }
+    .glass-effect { backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f9fe]/70 dark:bg-slate-950/70 backdrop-blur-xl flex items-center justify-between px-6 pt-8 pb-4 w-full">
+<div class="font-['Inter'] font-extrabold text-[2rem] tracking-tight leading-tight text-slate-900">SiteFlow</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-[28px] cursor-pointer hover:opacity-80 transition-opacity">account_circle</span>
+</div>
+</header>
+<main class="px-6 pb-[140px] pt-4">
+<!-- Header Section -->
+<section class="mb-8">
+<h1 class="text-[28px] font-extrabold tracking-tight text-on-surface leading-tight">Notes</h1>
+<p class="text-on-surface-variant font-medium">Capture observations instantly.</p>
+</section>
+<!-- Bento Grid Action Area -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+<!-- Recording Interface -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col items-center justify-center relative overflow-hidden group">
+<!-- Visual Pulse Effect (Stylized) -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-32 h-32 bg-error/10 rounded-full animate-ping"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-gradient-to-b from-primary-container to-primary flex items-center justify-center shadow-lg active:scale-95 transition-transform duration-200 cursor-pointer mb-3">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="mic" data-weight="fill" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] text-primary">Tap to stop</span>
+<!-- Waveform Simulation -->
+<div class="flex items-end gap-1 h-8 mt-4">
+<div class="w-1 bg-error rounded-full h-3"></div>
+<div class="w-1 bg-error rounded-full h-6"></div>
+<div class="w-1 bg-error rounded-full h-8"></div>
+<div class="w-1 bg-error rounded-full h-5"></div>
+<div class="w-1 bg-error rounded-full h-7"></div>
+</div>
+<div class="mt-2 font-mono text-error font-bold">0:04</div>
+</div>
+</div>
+<!-- Quick Input Form -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.06)] flex flex-col gap-4">
+<div>
+<button class="flex items-center justify-between w-full px-4 py-3 bg-surface-container-low rounded-lg text-on-surface-variant text-sm font-medium">
+<span>Link to: <span class="text-on-surface">[Select job ▾]</span></span>
+<span class="material-symbols-outlined text-[20px]">work</span>
+</button>
+</div>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low border-none rounded-xl p-4 min-h-[120px] text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 resize-none" placeholder="Type or dictate your note..."></textarea>
+<span class="material-symbols-outlined absolute bottom-4 right-4 text-outline cursor-pointer hover:text-primary transition-colors">mic</span>
+</div>
+<button class="w-full h-14 bg-gradient-to-b from-primary-container to-primary text-white font-bold rounded-xl active:scale-95 transition-transform duration-200">
+          Save Note
+        </button>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+<span class="px-5 py-2 bg-primary text-white rounded-full font-bold text-[11px] uppercase tracking-[0.05em] flex-shrink-0">All</span>
+<span class="px-5 py-2 bg-surface-container-highest text-on-surface-variant rounded-full font-bold text-[11px] uppercase tracking-[0.05em] flex-shrink-0 hover:bg-surface-container-high transition-colors">Internal</span>
+<span class="px-5 py-2 bg-surface-container-highest text-on-surface-variant rounded-full font-bold text-[11px] uppercase tracking-[0.05em] flex-shrink-0 hover:bg-surface-container-high transition-colors">Customer</span>
+<span class="px-5 py-2 bg-surface-container-highest text-on-surface-variant rounded-full font-bold text-[11px] uppercase tracking-[0.05em] flex-shrink-0 hover:bg-surface-container-high transition-colors">Insurance</span>
+</div>
+<!-- Recent Notes List -->
+<div class="space-y-4">
+<h3 class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] text-on-surface-variant ml-1">Recent Activity</h3>
+<!-- Card 1: Internal -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.06)] flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-extrabold uppercase rounded-full">Internal</span>
+<span class="text-outline text-xs font-medium">14 mins ago</span>
+</div>
+<p class="text-on-surface text-sm leading-relaxed font-medium">Found unexpected structural damage in the west wing foundation. Need inspector appraisal before proceeding with slab pour.</p>
+<div class="flex items-center gap-4 text-outline mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">image</span>
+<span class="text-xs font-bold">2 Photos</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span class="text-xs font-bold">Job #4492</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-surface-container">
+<span class="text-xs font-bold text-on-surface-variant">A. Miller</span>
+<span class="material-symbols-outlined text-outline text-[20px]">more_horiz</span>
+</div>
+</div>
+<!-- Card 2: Insurance -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.06)] flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-tertiary-container/10 text-tertiary-container text-[10px] font-extrabold uppercase rounded-full">Insurance</span>
+<span class="text-outline text-xs font-medium">2 hours ago</span>
+</div>
+<p class="text-on-surface text-sm leading-relaxed font-medium">Claim #PX-992 verification complete. All water damage points documented for the adjuster meeting tomorrow at 8AM.</p>
+<div class="flex items-center gap-4 text-outline mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+<span class="text-xs font-bold">Voice Memo</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span class="text-xs font-bold">Smith Residence</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-surface-container">
+<span class="text-xs font-bold text-on-surface-variant">A. Miller</span>
+<span class="material-symbols-outlined text-outline text-[20px]">more_horiz</span>
+</div>
+</div>
+<!-- Card 3: Customer -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.06)] flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-secondary-container/20 text-secondary font-extrabold text-[10px] uppercase rounded-full">Customer</span>
+<span class="text-outline text-xs font-medium">Yesterday</span>
+</div>
+<p class="text-on-surface text-sm leading-relaxed font-medium">Client requested a change to the backsplash tile pattern. Swapped from subway to herringbone. Signed off on additional labor costs.</p>
+<div class="flex items-center gap-4 text-outline mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span class="text-xs font-bold">Downtown Loft</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-surface-container">
+<span class="text-xs font-bold text-on-surface-variant">A. Miller</span>
+<span class="material-symbols-outlined text-outline text-[20px]">more_horiz</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-[20px] shadow-[0px_-2px_16px_rgba(0,0,0,0.06)] flex justify-around items-center px-4 pb-safe w-full">
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Jobs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Contacts</span>
+</div>
+<!-- Active State -->
+<div class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Notes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Settings</span>
+</div>
+</nav>
+</body></html>
+
+<!-- Settings & Profile -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9fe; }
+        .glass-nav { backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased pb-[120px]">
+<!-- Top Navigation Anchor -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f9fe]/70 dark:bg-slate-950/70 backdrop-blur-xl flex items-center justify-between px-6 pt-8 pb-4">
+<h1 class="font-['Inter'] font-extrabold text-[2rem] tracking-tight leading-tight text-slate-900">SiteFlow</h1>
+<div class="text-[#0041c8] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[32px]" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-6 pt-8">
+<!-- Settings Title -->
+<h2 class="text-[28px] font-extrabold tracking-tight mb-8 text-on-surface">Settings</h2>
+<!-- Profile Section -->
+<section class="mb-12 flex flex-col items-center sm:flex-row sm:items-center gap-6">
+<div class="relative w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white text-[28px] font-extrabold shadow-lg">
+                JR
+            </div>
+<div class="flex-1 text-center sm:text-left">
+<h3 class="text-xl font-bold text-on-surface">Juan Rodriguez</h3>
+<p class="text-on-surface-variant text-sm font-medium">Project Manager</p>
+<p class="text-on-surface-variant text-sm mb-4">ABC Restoration Services</p>
+<button class="px-6 py-2 border-2 border-outline-variant text-primary font-bold text-sm rounded-xl hover:bg-surface-container-low transition-colors">
+                    Edit Profile
+                </button>
+</div>
+</section>
+<!-- Notification Preferences -->
+<div class="mb-6">
+<h4 class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-3 px-1">Notification Preferences</h4>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_2px_16px_rgba(0,0,0,0.06)] space-y-6">
+<!-- Row 1 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">SMS</p>
+<p class="text-xs text-on-surface-variant">Urgent dispatch</p>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full relative flex items-center px-1">
+<div class="absolute right-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">Email</p>
+<p class="text-xs text-on-surface-variant">Daily summaries</p>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full relative flex items-center px-1">
+<div class="absolute right-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">In-App Alerts</p>
+<p class="text-xs text-on-surface-variant">Real-time feedback</p>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative flex items-center px-1">
+<div class="absolute left-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Card -->
+<div class="mb-12">
+<h4 class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-3 px-1">Security</h4>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.06)] overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors">
+<span class="font-bold text-on-surface">Change Password</span>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-bold text-on-surface">Biometric Authentication</span>
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-extrabold rounded-full uppercase">On</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors">
+<span class="font-bold text-on-surface">Managed Devices</span>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- About Section -->
+<section class="text-center py-8">
+<p class="font-bold text-on-surface">SiteFlow v2.0.0</p>
+<p class="text-sm text-on-surface-variant tracking-wide">Built for the field</p>
+</section>
+</main>
+<!-- Bottom Navigation Bar (The Anchor) -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 backdrop-blur-[20px] shadow-[0px_-2px_16px_rgba(0,0,0,0.06)] flex justify-around items-center px-4 pb-safe">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Home</span>
+</div>
+<!-- Jobs -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="construction">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Jobs</span>
+</div>
+<!-- Contacts -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="contacts">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Contacts</span>
+</div>
+<!-- Notes -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="description">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Notes</span>
+</div>
+<!-- Settings (Active) -->
+<div class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Settings</span>
+</div>
+</nav>
+</body></html>

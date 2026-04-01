@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9fe; }
+        .glass-nav { backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased pb-[120px]">
+<!-- Top Navigation Anchor -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f9fe]/70 dark:bg-slate-950/70 backdrop-blur-xl flex items-center justify-between px-6 pt-8 pb-4">
+<h1 class="font-['Inter'] font-extrabold text-[2rem] tracking-tight leading-tight text-slate-900">SiteFlow</h1>
+<div class="text-[#0041c8] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[32px]" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-6 pt-8">
+<!-- Settings Title -->
+<h2 class="text-[28px] font-extrabold tracking-tight mb-8 text-on-surface">Settings</h2>
+<!-- Profile Section -->
+<section class="mb-12 flex flex-col items-center sm:flex-row sm:items-center gap-6">
+<div class="relative w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white text-[28px] font-extrabold shadow-lg">
+                JR
+            </div>
+<div class="flex-1 text-center sm:text-left">
+<h3 class="text-xl font-bold text-on-surface">Juan Rodriguez</h3>
+<p class="text-on-surface-variant text-sm font-medium">Project Manager</p>
+<p class="text-on-surface-variant text-sm mb-4">ABC Restoration Services</p>
+<button class="px-6 py-2 border-2 border-outline-variant text-primary font-bold text-sm rounded-xl hover:bg-surface-container-low transition-colors">
+                    Edit Profile
+                </button>
+</div>
+</section>
+<!-- Notification Preferences -->
+<div class="mb-6">
+<h4 class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-3 px-1">Notification Preferences</h4>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_2px_16px_rgba(0,0,0,0.06)] space-y-6">
+<!-- Row 1 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">SMS</p>
+<p class="text-xs text-on-surface-variant">Urgent dispatch</p>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full relative flex items-center px-1">
+<div class="absolute right-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">Email</p>
+<p class="text-xs text-on-surface-variant">Daily summaries</p>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full relative flex items-center px-1">
+<div class="absolute right-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">In-App Alerts</p>
+<p class="text-xs text-on-surface-variant">Real-time feedback</p>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative flex items-center px-1">
+<div class="absolute left-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Card -->
+<div class="mb-12">
+<h4 class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-3 px-1">Security</h4>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.06)] overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors">
+<span class="font-bold text-on-surface">Change Password</span>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-bold text-on-surface">Biometric Authentication</span>
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-extrabold rounded-full uppercase">On</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors">
+<span class="font-bold text-on-surface">Managed Devices</span>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- About Section -->
+<section class="text-center py-8">
+<p class="font-bold text-on-surface">SiteFlow v2.0.0</p>
+<p class="text-sm text-on-surface-variant tracking-wide">Built for the field</p>
+</section>
+</main>
+<!-- Bottom Navigation Bar (The Anchor) -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 backdrop-blur-[20px] shadow-[0px_-2px_16px_rgba(0,0,0,0.06)] flex justify-around items-center px-4 pb-safe">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Home</span>
+</div>
+<!-- Jobs -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="construction">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Jobs</span>
+</div>
+<!-- Contacts -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="contacts">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Contacts</span>
+</div>
+<!-- Notes -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="description">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Notes</span>
+</div>
+<!-- Settings (Active) -->
+<div class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Settings</span>
+</div>
+</nav>
+</body></html>

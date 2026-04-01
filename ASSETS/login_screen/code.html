@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SiteFlow - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .login-gradient {
+            background: radial-gradient(circle at top right, #101830, #080c18);
+        }
+        .button-glow {
+            box-shadow: 0 0 20px rgba(0, 85, 255, 0.4);
+        }
+        .logo-glow {
+            box-shadow: 0 0 30px rgba(0, 85, 255, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="login-gradient min-h-screen flex flex-col font-body text-white selection:bg-primary-container selection:text-white overflow-hidden">
+<!-- Content Canvas -->
+<main class="flex-1 flex items-center justify-center px-6">
+<div class="w-full max-w-sm flex flex-col items-center">
+<!-- Logo Section -->
+<div class="mb-10 relative">
+<div class="w-[72px] h-[72px] bg-gradient-to-br from-[#0055ff] to-[#0041c8] rounded-full flex items-center justify-center logo-glow relative z-10">
+<span class="material-symbols-outlined text-white text-[40px]" style="font-variation-settings: 'FILL' 1;">near_me</span>
+</div>
+<!-- Decorative wave/pin element background blur -->
+<div class="absolute inset-0 bg-primary-container opacity-20 blur-2xl rounded-full scale-150"></div>
+</div>
+<!-- Header Section -->
+<div class="text-center mb-12">
+<h1 class="text-[32px] font-extrabold tracking-tight leading-tight mb-2">SiteFlow</h1>
+<p class="text-[15px] text-white/50 font-medium">Your job site command center</p>
+</div>
+<!-- Form Section -->
+<div class="w-full space-y-4">
+<div class="relative group">
+<input class="w-full h-[52px] bg-white/[0.08] border-0 rounded-[14px] px-5 text-white placeholder:text-white/30 focus:ring-2 focus:ring-primary-container/40 transition-all duration-300" placeholder="Access code" type="text"/>
+<!-- Error State (Hidden by default in CSS, managed by logic) -->
+<div class="hidden absolute -bottom-6 left-1" id="error-message">
+<span class="text-error text-xs font-bold tracking-tight">Invalid access code</span>
+</div>
+</div>
+<button class="w-full h-[52px] bg-gradient-to-b from-[#0055ff] to-[#0040cc] rounded-[14px] flex items-center justify-center gap-2 font-bold text-[16px] button-glow hover:opacity-90 active:scale-[0.98] transition-all">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Subtle secondary action -->
+<div class="mt-8">
+<button class="text-white/40 hover:text-white/60 text-sm font-semibold transition-colors">
+                    Request site access
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="py-8 flex justify-center w-full">
+<p class="text-[12px] font-bold text-white/20 uppercase tracking-[0.05em]">
+            SiteFlow — Built for the field
+        </p>
+</footer>
+<!-- Image Logic for decorative backgrounds if needed -->
+<div class="fixed inset-0 -z-10 opacity-30 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-primary/20 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary-container/10 blur-[100px]"></div>
+</div>
+</body></html>

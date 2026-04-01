@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "SiteFlow",
+    "slug": "siteflow",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "siteflow",
+    "splash": {
+      "backgroundColor": "#080c18",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.evolutioncrm.siteflow",
+      "infoPlist": {
+        "NSCameraUsageDescription": "SiteFlow needs camera access to document job sites.",
+        "NSMicrophoneUsageDescription": "SiteFlow needs microphone access for voice notes.",
+        "NSPhotoLibraryUsageDescription": "SiteFlow needs photo library access to attach existing photos to jobs."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#080c18"
+      },
+      "package": "com.evolutioncrm.siteflow",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-camera",
+      "expo-secure-store",
+      [
+        "expo-av",
+        {
+          "microphonePermission": "SiteFlow needs microphone access for voice notes."
+        }
+      ],
+      "expo-asset"
+    ]
+  }
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SiteFlow - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#2b418d",
+            "surface-bright": "#f9f9fe",
+            "primary-fixed": "#dce1ff",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "on-tertiary-container": "#ffe1d9",
+            "on-surface": "#1a1c1f",
+            "primary-container": "#0055ff",
+            "on-error-container": "#93000a",
+            "outline": "#737688",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#c13301",
+            "on-secondary-container": "#243c88",
+            "secondary-fixed": "#dce1ff",
+            "on-primary-fixed": "#001551",
+            "inverse-surface": "#2e3034",
+            "surface-dim": "#d9dade",
+            "secondary-container": "#95aafd",
+            "inverse-on-surface": "#f0f0f5",
+            "on-secondary": "#ffffff",
+            "surface": "#f9f9fe",
+            "surface-container": "#ededf2",
+            "on-tertiary-fixed": "#3b0900",
+            "primary-fixed-dim": "#b6c4ff",
+            "on-primary-container": "#e3e6ff",
+            "primary": "#0041c8",
+            "tertiary": "#972500",
+            "surface-tint": "#004dea",
+            "on-background": "#1a1c1f",
+            "on-primary-fixed-variant": "#0039b3",
+            "inverse-primary": "#b6c4ff",
+            "error": "#ba1a1a",
+            "background": "#f9f9fe",
+            "tertiary-fixed": "#ffdbd1",
+            "surface-container-highest": "#e2e2e7",
+            "secondary-fixed-dim": "#b6c4ff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#872100",
+            "on-secondary-fixed": "#001551",
+            "on-error": "#ffffff",
+            "surface-variant": "#e2e2e7",
+            "secondary": "#445aa7",
+            "outline-variant": "#c3c5d9",
+            "surface-container-high": "#e8e8ed",
+            "surface-container-low": "#f3f3f8",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#434656"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    .tonal-stacking { position: relative; z-index: 1; }
+    .no-border { border: none !important; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background antialiased pb-[120px]">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#111827] text-white">
+<div class="flex items-center justify-between px-6 pt-8 pb-6 w-full">
+<div class="flex flex-col">
+<span class="text-[12px] font-bold uppercase tracking-[0.1em] text-slate-400">Good morning</span>
+<h1 class="font-headline font-extrabold text-[26px] tracking-tight leading-tight text-white">SiteFlow</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-container to-primary flex items-center justify-center font-bold text-white shadow-lg">
+          JR
+        </div>
+</div>
+</div>
+</header>
+<main class="px-6 py-6 space-y-8">
+<!-- Alerts Banner -->
+<section>
+<div class="bg-error/5 border-l-[3px] border-error rounded-r-xl p-4 flex gap-3 items-start">
+<span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="text-sm font-semibold text-on-error-container leading-snug">
+          2 lien deadlines within 5 days · 3 supplements overdue 30+ days
+        </p>
+</div>
+</section>
+<!-- Key Metrics Row (Horizontal Scroll) -->
+<section>
+<div class="flex overflow-x-auto pb-4 gap-4 scrollbar-hide -mx-6 px-6">
+<div class="flex-none w-40 bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<p class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Active Jobs</p>
+<p class="text-[28px] font-extrabold text-primary leading-none">12</p>
+</div>
+<div class="flex-none w-52 bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<p class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Pending Supplements</p>
+<p class="text-[28px] font-extrabold text-tertiary-container leading-none">$48,500</p>
+</div>
+<div class="flex-none w-40 bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<p class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Equipment Out</p>
+<p class="text-[28px] font-extrabold text-on-surface leading-none">47</p>
+</div>
+<div class="flex-none w-40 bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<p class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Overdue Tasks</p>
+<p class="text-[28px] font-extrabold text-error leading-none">5</p>
+</div>
+</div>
+</section>
+<!-- Quick Actions (2x2 Grid) -->
+<section class="space-y-4">
+<h2 class="text-[11px] font-bold uppercase tracking-[0.1em] text-on-surface-variant">Quick Actions</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- New Job -->
+<button class="flex flex-col items-center justify-center p-6 bg-primary-container text-white rounded-[24px] gap-3 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add_business</span>
+<span class="text-sm font-bold">New Job</span>
+</button>
+<!-- Quick Photo -->
+<button class="flex flex-col items-center justify-center p-6 bg-white text-on-surface border border-outline-variant/20 rounded-[24px] gap-3 active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[32px] text-primary">photo_camera</span>
+<span class="text-sm font-bold">Quick Photo</span>
+</button>
+<!-- Voice Note -->
+<button class="flex flex-col items-center justify-center p-6 bg-white text-on-surface border border-outline-variant/20 rounded-[24px] gap-3 active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[32px] text-tertiary-container">mic</span>
+<span class="text-sm font-bold">Voice Note</span>
+</button>
+<!-- Log Reading -->
+<button class="flex flex-col items-center justify-center p-6 bg-white text-on-surface border border-outline-variant/20 rounded-[24px] gap-3 active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[32px] text-[#008080]">straighten</span>
+<span class="text-sm font-bold">Log Reading</span>
+</button>
+</div>
+</section>
+<!-- My Tasks Section -->
+<section class="space-y-4">
+<h2 class="font-headline font-extrabold text-[20px] text-on-surface tracking-tight">My Tasks</h2>
+<div class="space-y-4">
+<!-- Juan Rodriguez PM Card -->
+<div class="bg-surface-container-lowest p-5 rounded-[24px] shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-[11px] font-bold text-blue-700">JR</div>
+<span class="font-bold text-sm">Juan Rodriguez (PM)</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-error shrink-0"></div>
+<div>
+<p class="text-sm font-semibold">Sign Contract - Miller Residence</p>
+<p class="text-[12px] text-on-surface-variant">Residential Roof Repair</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-error/10 text-error text-[10px] font-bold uppercase rounded-full">Overdue</span>
+</div>
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-tertiary-container shrink-0"></div>
+<div>
+<p class="text-sm font-semibold">Equipment Return Check</p>
+<p class="text-[12px] text-on-surface-variant">Main Warehouse</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold uppercase rounded-full">Due today</span>
+</div>
+</div>
+</div>
+<!-- Matt Kowalski PM Card -->
+<div class="bg-surface-container-lowest p-5 rounded-[24px] shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-[11px] font-bold text-amber-700">MK</div>
+<span class="font-bold text-sm">Matt Kowalski (PM)</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<div class="mt-1.5 w-2 h-2 rounded-full bg-[#10b981] shrink-0"></div>
+<div>
+<p class="text-sm font-semibold">Permit Approval Follow-up</p>
+<p class="text-[12px] text-on-surface-variant">Oak Street Plaza</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold uppercase rounded-full">Tomorrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 backdrop-blur-[20px] flex justify-around items-center px-4 pb-safe shadow-[0px_-2px_16px_rgba(0,0,0,0.06)]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Home</span>
+</a>
+<!-- Jobs -->
+<a class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Jobs</span>
+</a>
+<!-- Contacts -->
+<a class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Contacts</span>
+</a>
+<!-- Notes -->
+<a class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Notes</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em]">Settings</span>
+</a>
+</nav>
+</body></html>

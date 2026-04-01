@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#2b418d",
+              "surface-bright": "#f9f9fe",
+              "primary-fixed": "#dce1ff",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#ffe1d9",
+              "on-surface": "#1a1c1f",
+              "primary-container": "#0055ff",
+              "on-error-container": "#93000a",
+              "outline": "#737688",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#c13301",
+              "on-secondary-container": "#243c88",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001551",
+              "inverse-surface": "#2e3034",
+              "surface-dim": "#d9dade",
+              "secondary-container": "#95aafd",
+              "inverse-on-surface": "#f0f0f5",
+              "on-secondary": "#ffffff",
+              "surface": "#f9f9fe",
+              "surface-container": "#ededf2",
+              "on-tertiary-fixed": "#3b0900",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-primary-container": "#e3e6ff",
+              "primary": "#0041c8",
+              "tertiary": "#972500",
+              "surface-tint": "#004dea",
+              "on-background": "#1a1c1f",
+              "on-primary-fixed-variant": "#0039b3",
+              "inverse-primary": "#b6c4ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9fe",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-highest": "#e2e2e7",
+              "secondary-fixed-dim": "#b6c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#872100",
+              "on-secondary-fixed": "#001551",
+              "on-error": "#ffffff",
+              "surface-variant": "#e2e2e7",
+              "secondary": "#445aa7",
+              "outline-variant": "#c3c5d9",
+              "surface-container-high": "#e8e8ed",
+              "surface-container-low": "#f3f3f8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- Top Navigation Shell -->
+<header class="w-full sticky top-0 z-50 bg-[#f9f9fe]/70 dark:bg-slate-950/70 backdrop-blur-xl flex items-center justify-between px-6 pt-8 pb-4">
+<div class="flex items-center gap-2">
+<span class="font-['Inter'] font-extrabold text-[2rem] tracking-tight leading-tight text-slate-900 dark:text-slate-50">SiteFlow</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity" data-icon="search">search</button>
+<span class="material-symbols-outlined text-[#0041c8] dark:text-[#0055ff]" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="px-6 pb-[120px]">
+<!-- Page Header -->
+<section class="mt-6 flex items-end justify-between">
+<div>
+<h1 class="text-[28px] font-extrabold tracking-tight leading-none text-on-surface">Contacts</h1>
+<p class="text-on-surface-variant mt-1 font-medium">Your referral network</p>
+</div>
+<button class="bg-surface-container-low p-3 rounded-xl text-on-surface hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined align-middle" data-icon="filter_list">filter_list</span>
+</button>
+</section>
+<!-- Search Bar -->
+<section class="mt-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full h-[48px] bg-surface-container-low border-none rounded-xl pl-12 pr-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline outline-none" placeholder="Search contacts..." type="text"/>
+</div>
+</section>
+<!-- Filter Tabs -->
+<section class="mt-6 overflow-x-auto hide-scrollbar -mx-6 px-6">
+<div class="flex gap-2 min-w-max">
+<button class="px-5 py-2.5 rounded-full bg-primary text-on-primary font-bold text-[13px] tracking-wide">All (12)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Agents (5)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Adjusters (3)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Clients (2)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Property Mgrs (1)</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-bold text-[13px] tracking-wide hover:bg-surface-container-high transition-colors">Plumbers (1)</button>
+</div>
+</section>
+<!-- Contact Cards List -->
+<div class="mt-8 space-y-4">
+<!-- Contact 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] group hover:shadow-lg transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl">SM</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Sarah Mitchell</h3>
+<p class="text-on-surface-variant text-sm font-medium">State Farm • Agent</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary" data-icon="schedule">schedule</span>
+<span class="text-[12px] font-bold text-tertiary">3 days ago</span>
+</div>
+</div>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-wider rounded-full">Primary</span>
+</div>
+<div class="mt-6 flex justify-between items-center bg-surface-container-low/50 p-4 rounded-xl">
+<div class="text-center flex-1 border-r border-outline-variant/30">
+<p class="text-[11px] font-bold uppercase tracking-widest text-outline">Referrals</p>
+<p class="text-xl font-extrabold text-on-surface">12</p>
+</div>
+<div class="text-center flex-1">
+<p class="text-[11px] font-bold uppercase tracking-widest text-outline">Revenue</p>
+<p class="text-xl font-extrabold text-on-surface">$156K</p>
+</div>
+</div>
+</div>
+<!-- Contact 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
+<div class="flex gap-4">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold text-xl">DP</div>
+<div class="flex-1">
+<div class="flex justify-between items-start w-full">
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">David Park</h3>
+<p class="text-on-surface-variant text-sm font-medium">Allstate • Agent</p>
+</div>
+<div class="text-right">
+<p class="text-xl font-extrabold text-on-surface">8</p>
+<p class="text-[10px] font-bold uppercase tracking-tighter text-outline">Referrals</p>
+</div>
+</div>
+<div class="mt-3 h-1.5 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%] rounded-full"></div>
+</div>
+<p class="text-right mt-1 text-[13px] font-bold text-primary">$98K Total</p>
+</div>
+</div>
+</div>
+<!-- Contact 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow border-l-4 border-primary">
+<div class="flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-xl">MG</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Maria Gonzalez</h3>
+<p class="text-on-surface-variant text-sm font-medium">USAA • Agent</p>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-container p-3 rounded-xl">
+<p class="text-[11px] font-bold uppercase tracking-tight text-center">Top Earner</p>
+<p class="text-lg font-black leading-tight">$210K</p>
+</div>
+</div>
+</div>
+<!-- Contact 4 (Warning) -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white font-bold">JO</div>
+<h3 class="font-bold text-on-surface">James O'Brien</h3>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-error-container text-error rounded-full">
+<span class="material-symbols-outlined text-base" data-icon="warning">warning</span>
+<span class="text-[11px] font-bold uppercase tracking-wider">Stale</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm text-on-surface-variant font-medium">
+<span>Liberty Mutual • Agent</span>
+<span class="font-bold text-on-surface">5 referrals</span>
+</div>
+</div>
+<!-- Contact 5 -->
+<div class="bg-surface-container-low/40 p-5 rounded-xl border border-outline-variant/10">
+<div class="flex gap-4">
+<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center text-white font-bold text-xl">TB</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Tom Bradley</h3>
+<p class="text-on-surface-variant text-sm font-medium">State Farm • Adjuster</p>
+<div class="mt-2 inline-flex items-center gap-2 bg-surface-container-highest px-3 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="work">work</span>
+<span class="text-[12px] font-bold">6 jobs handled</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact 6 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl">KT</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Kevin Tran</h3>
+<p class="text-on-surface-variant text-sm font-medium">Property Mgr</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xl font-extrabold text-on-surface">$89K</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline">7 Referrals</p>
+</div>
+</div>
+</div>
+<!-- Contact 7 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_2px_16px_rgba(0,0,0,0.04)] border-r-4 border-emerald-500">
+<div class="flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-green-600 flex items-center justify-center text-white font-bold text-xl">MH</div>
+<div>
+<h3 class="font-extrabold text-lg text-on-surface">Mike Hernandez</h3>
+<p class="text-on-surface-variant text-sm font-medium">Plumber</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xl font-extrabold text-on-surface">$112K</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline">9 Referrals</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full h-[94px] rounded-t-[24px] z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-[20px] shadow-[0px_-2px_16px_rgba(0,0,0,0.06)] flex justify-around items-center px-4 pb-safe">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Home</span>
+</div>
+<!-- Jobs -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="construction">construction</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Jobs</span>
+</div>
+<!-- Contacts (Active) -->
+<div class="flex flex-col items-center justify-center bg-[#0055ff] text-white rounded-[20px] px-4 py-2 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="contacts" style="font-variation-settings: 'FILL' 1;">contacts</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Contacts</span>
+</div>
+<!-- Notes -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Notes</span>
+</div>
+<!-- Settings -->
+<div class="flex flex-col items-center justify-center text-[#6b7280] px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-bold uppercase tracking-[0.05em] mt-1">Settings</span>
+</div>
+</nav>
+</body></html>
